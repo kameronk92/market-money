@@ -6,5 +6,6 @@ describe "Markets API" do
     get '/api/v0/markets'
 
     expect(response).to be_successful
+    expect(response).to be_a(JSON)
   end
 end
