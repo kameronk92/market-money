@@ -60,5 +60,6 @@ group :test do
   gem "simplecov"
   gem "vcr"
   gem "webmock"
+  gem 'active_model_serializers'
 end
 
