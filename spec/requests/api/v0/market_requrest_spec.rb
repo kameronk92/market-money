@@ -53,7 +53,9 @@ describe "Markets Index" do
   end
 
   it "sends details of a single market" do
-    get api_v0_market_path(1)
+    market = create(:market)
+
+    get api_v0_market_path(market.id)
 
     expect(response).to be_successful
 
