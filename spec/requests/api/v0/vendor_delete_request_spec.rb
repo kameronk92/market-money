@@ -12,8 +12,8 @@ RSpec.describe "Vendor Delete Requests" do
 
     expect(response).to be_successful
 
-    expect(response.status).to eq(204)
     expect(response.body).to be_empty
+    expect(response.status).to eq(204)
 
     expect(Vendor.count).to be_zero
   end

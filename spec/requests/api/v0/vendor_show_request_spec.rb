@@ -7,6 +7,7 @@ RSpec.describe "Vendor Show Requests" do
     get api_v0_vendor_path(vendor.id)
 
     expect(response).to be_successful
+    expect(response.status).to eq(200)
 
     vendor = JSON.parse(response.body, symbolize_names: true)
 

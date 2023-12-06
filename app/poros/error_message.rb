@@ -11,6 +11,8 @@ class ErrorMessage
       "Validation failed: " + @message.join(", ")
     elsif @status_code == 404
       @message
+    else
+      "He's dead, Jim. Error Code #{@status_code}"
     end
   end
 end

@@ -14,6 +14,7 @@ RSpec.describe "Markets Requests" do
     get api_v0_markets_path
 
     expect(response).to be_successful
+    expect(response.status).to eq(200)
 
     markets = JSON.parse(response.body, symbolize_names: true)
 

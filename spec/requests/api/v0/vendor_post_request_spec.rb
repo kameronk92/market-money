@@ -16,6 +16,7 @@ RSpec.describe "Vendor Post Requests" do
     post api_v0_vendors_path, params: new_vendor_params
 
     expect(response).to be_successful
+    expect(response.status).to eq(201)
 
     vendor = JSON.parse(response.body, symbolize_names: true)
 

@@ -15,6 +15,7 @@ RSpec.describe "market vendors requests" do
       get api_v0_market_vendors_path(1)
       
       expect(response).to be_successful
+      expect(response.status).to eq(200)
 
       vendors = JSON.parse(response.body, symbolize_names: true)
 
