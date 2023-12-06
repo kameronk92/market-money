@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Markets Requests" do
+RSpec.describe "Markets Show Requests" do
   it "sends details of a single market, happy" do
     market = create(:market)
 
