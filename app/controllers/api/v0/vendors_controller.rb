@@ -23,6 +23,15 @@ class Api::V0::VendorsController < ApplicationController
     end
   end
 
+  def destroy
+    vendor = Vendor.find(params[:id])
+    if vendor.destroy
+      head :no_content
+    else
+      bad_request_response(vendor.errors.full_messages)
+    end
+  end
+
   def bad_request_response(exception)
     render json: ErrorSerializer.new(ErrorMessage.new(exception, 400))
     .serialize_json, status: :bad_request
