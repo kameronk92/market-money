@@ -9,10 +9,6 @@ class Api::V0::VendorsController < ApplicationController
     render json: VendorSerializer.new(Vendor.find(params[:id]))
   end
 
-  def new
-    render json: VendorSerializer.new(Vendor.new)
-  end
-
   def create
     vendor = Vendor.new(vendor_params)
 
@@ -20,6 +16,18 @@ class Api::V0::VendorsController < ApplicationController
       render json: VendorSerializer.new(vendor), status: :created
     else
       bad_request_response(vendor.errors.full_messages)
+    end
+  end
+
+  def update
+    if vendor = Vendor.find(params[:id])
+      if vendor.update(vendor_params)
+        render json: VendorSerializer.new(vendor), status: :accepted
+      else
+        bad_request_response(vendor.errors.full_messages)
+      end
+    else
+      not_found_response(vendor.errors.full_messages)
     end
   end
 
