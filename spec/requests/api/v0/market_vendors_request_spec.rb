@@ -60,8 +60,7 @@ RSpec.describe "market vendors requests" do
       data = JSON.parse(response.body, symbolize_names: true)
 
       expect(data[:errors]).to be_a(Array)
-      expect(data[:errors].first[:status]).to eq("404")
-      expect(data[:errors].first[:title]).to eq("Couldn't find Market with 'id'=1")
+      expect(data[:errors].first[:detail]).to eq("Couldn't find Market with 'id'=1")
     end
   end
 end

@@ -1,10 +1,19 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe "Vendor Show Requests" do
-  it "sends details of a single vendor, happy" do
-    vendor = create(:vendor)
+RSpec.describe "Vendor Post Requests" do
+  it "adds a vendor to the vendors list, happy" do
+    expect(Vendor.count).to be_zero
 
-    get api_v0_vendor_path(vendor.id)
+    new_vendor_params = {
+      id: 1,
+      name: "Blaine's Vapes",
+      description: "lame vape shop",
+      contact_name: "Blaine",
+      contact_phone: "123-456-7890",
+      credit_accepted: true
+    }
+
+    post api_v0_vendors_path, params: new_vendor_params
 
     expect(response).to be_successful
 
@@ -40,17 +49,23 @@ RSpec.describe "Vendor Show Requests" do
     expect(attributes[:credit_accepted]).to be_in([true, false])
   end
 
-  it "sends details of a single vendor, sad" do
-    expect Vendor.count.zero?
+  it "adds a vendor to the vendors list, sad" do
+    expect(Vendor.count).to be_zero
 
-    get api_v0_vendor_path(1)
+    new_vendor_params = {
+      id: 1,
+      description: "lame vape shop",
+      contact_phone: "123-456-7890",
+      credit_accepted: true
+    }
+
+    post api_v0_vendors_path, params: new_vendor_params
 
     expect(response).to_not be_successful
-    expect(response.status).to eq(404)
 
     data = JSON.parse(response.body, symbolize_names: true)
 
     expect(data[:errors]).to be_a(Array)
-    expect(data[:errors].first[:detail]).to eq("Couldn't find Vendor with 'id'=1")
+    expect(data[:errors].first[:detail]).to eq("Validation failed: Name can't be blank, Contact name can't be blank")
   end
 end
