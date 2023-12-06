@@ -52,7 +52,7 @@ RSpec.describe "vendor requests" do
     it 'sad path' do
       expect Market.count == 0
 
-      get api_v0_market_path(1)
+      get api_v0_market_vendors_path(1)
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
