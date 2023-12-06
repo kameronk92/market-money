@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-describe "Markets Index" do
-  it "sends a list of all markets , happy" do
+RSpec.describe "Markets Requests" do
+  it "sends a list of all markets - happy" do
     create_list(:market, 7)
 
-    @vendors = create_list(:vendor, 20) 
+    vendors = create_list(:vendor, 20) 
 
-    @vendors.each do |vendor|
+    vendors.each do |vendor|
       market = Market.all.sample
       vendor.markets << market
     end
@@ -21,7 +21,7 @@ describe "Markets Index" do
 
     markets[:data].each do |market|
       expect(market).to have_key(:id)
-      expect(market[:id]).to be_an(String)
+      expect(market[:id]).to be_a(String)
 
       expect(market).to have_key(:attributes)
       expect(market[:attributes]).to be_a(Hash)
@@ -68,7 +68,7 @@ describe "Markets Index" do
     expect(market[:data][:id]).to be_a(String)
     
     expect(market[:data]).to have_key(:type)
-    expect(market[:data][:type]).to be_a(String)
+    expect(market[:data][:type]).to eq("market")
 
     expect(market[:data]).to have_key(:attributes)
     expect(market[:data][:attributes]).to be_a(Hash)
