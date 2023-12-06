@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.describe "vendor requests" do
-  describe "handles index requests" do
+RSpec.describe "market vendors requests" do
+  describe "returns all vendors belonging to a market" do
     it "happy path" do
       create(:market, id: 1)
 
