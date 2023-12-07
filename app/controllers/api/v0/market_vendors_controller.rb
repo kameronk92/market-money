@@ -1,18 +1,40 @@
 class Api::V0::MarketVendorsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :not_found_response
+  rescue_from ActiveRecord::RecordInvalid, with: :bad_request_response
 
   def create
     market = Market.find(params[:market_id])
+    raise ActiveRecord::RecordNotFound if market.nil?
     vendor = Vendor.find(params[:vendor_id])
+    raise ActiveRecord::RecordNotFound if vendor.nil?
 
-    if market.vendors << vendor
-      render json: { message: "Successfully added vendor to market" }, status: :created
-    else
-      bad_request_response(market_vendor.errors.full_messages)
-    end
+    raise ActiveRecord::RecordInvalid if market.vendors.include?(vendor)
+   
+    market.vendors << vendor
+    render json: { message: "Successfully added vendor to market" }, status: :created
   end
 
   private
+
+  def not_found_response(exception)
+    render json: {
+        errors: [
+          {
+            detail: "Validation failed: Market must exist"
+          }
+        ]
+      }, status: :not_found
+  end
+
+  def bad_request_response(exception)
+    render json:{
+      errors: [
+          {
+              detail: "Validation failed: Market vendor asociation between market with market_id=#{params[:market_id]} and vendor_id=#{params[:vendor_id]} already exists"
+          }
+      ]
+    }, status: :unprocessable_entity
+  end
 
   def market_vendor_params
     params.permit(:vendor_id, :market_id)

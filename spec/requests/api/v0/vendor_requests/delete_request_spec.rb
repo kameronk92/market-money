@@ -26,7 +26,6 @@ RSpec.describe "Vendor Delete Requests" do
     delete api_v0_vendor_path(2)
 
     expect(response).to_not be_successful
-
     expect(response.status).to eq(404)
 
     data = JSON.parse(response.body, symbolize_names: true)
