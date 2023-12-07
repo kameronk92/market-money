@@ -45,15 +45,15 @@
           1,
           null,
           1,
-          11,
-          11,
+          10,
+          10,
           null,
           null,
           1,
-          10,
+          9,
           3,
-          7,
           6,
+          5,
           null,
           1,
           null,
@@ -73,17 +73,21 @@
           1,
           2,
           null,
-          null,
-          1,
-          1,
-          null,
-          null,
           null
         ]
       },
       "/Users/kameron/turing_work/3mod/projects/market_money/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          1,
+          2,
+          null,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
           null
         ]
       },
@@ -128,17 +132,38 @@
         "lines": [
           1,
           1,
-          8,
+          7,
           null,
           null,
           1,
           null,
-          7,
+          6,
           null,
           null,
           null,
           null,
           null,
+          null,
+          null
+        ]
+      },
+      "/Users/kameron/turing_work/3mod/projects/market_money/app/controllers/api/v0/market_vendors_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
           null,
           null
         ]
@@ -149,7 +174,7 @@
           1,
           null,
           1,
-          2,
+          0,
           null,
           null,
           1,
@@ -188,16 +213,6 @@
           null,
           null,
           1,
-          2,
-          null,
-          null,
-          null,
-          1,
-          4,
-          null,
-          null,
-          null,
-          1,
           null,
           1,
           4,
@@ -206,6 +221,6 @@
         ]
       }
     },
-    "timestamp": 1701905433
+    "timestamp": 1701907751
   }
 }

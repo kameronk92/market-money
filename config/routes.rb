@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     namespace :v0 do
+      resources :market_vendors, only: [:create, :destroy]
       resources :markets, only: [:index, :show] do
-        resources :vendors, only: [:index]
+        resources :vendors, only: [:index], module: :markets
       end
-
       resources :vendors, only: [:show, :create, :update, :destroy]
     end
   end
