@@ -33,6 +33,7 @@ RSpec.describe "Vendor Update Requests" do
 
   describe "can update a vendor, sad" do
     it "has a response status of 404 if vendor does not exist" do
+      Vendor.destroy_all
       expect(Vendor.count).to be_zero
 
       updated_params = { id: 2, name: "Kylo Ren", description: "Dad assassin" }

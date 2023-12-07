@@ -2,6 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Vendor Delete Requests" do
   it "deletes a vendor from the vendors list, happy" do
+    Vendor.destroy_all
     expect(Vendor.count).to be_zero
 
     vendor = create(:vendor)
@@ -19,6 +20,7 @@ RSpec.describe "Vendor Delete Requests" do
   end
 
   it "delete a vendor from the vendors list, sad" do
+    Vendor.destroy_all
     expect(Vendor.count).to be_zero
 
     vendor = create(:vendor, id: 1)
@@ -26,7 +28,6 @@ RSpec.describe "Vendor Delete Requests" do
     delete api_v0_vendor_path(2)
 
     expect(response).to_not be_successful
-
     expect(response.status).to eq(404)
 
     data = JSON.parse(response.body, symbolize_names: true)

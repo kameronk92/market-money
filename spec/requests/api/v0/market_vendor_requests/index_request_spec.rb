@@ -12,7 +12,7 @@ RSpec.describe "market vendors requests" do
         vendor.markets << market
       end
       
-      get api_v0_market_vendors_path(1)
+      get '/api/v0/markets/1/vendors'
       
       expect(response).to be_successful
       expect(response.status).to eq(200)
@@ -48,12 +48,13 @@ RSpec.describe "market vendors requests" do
         expect(attributes).to have_key(:credit_accepted)
         expect(attributes[:credit_accepted]).to be_in([true, false])
       end
+      Vendor.destroy_all
     end
 
     it 'sad path' do
       expect Market.count == 0
 
-      get api_v0_market_vendors_path(1)
+      get '/api/v0/markets/1/vendors'
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)

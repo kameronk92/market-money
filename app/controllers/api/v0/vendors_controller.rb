@@ -20,14 +20,11 @@ class Api::V0::VendorsController < ApplicationController
   end
 
   def update
-    if vendor = Vendor.find(params[:id])
-      if vendor.update(vendor_params)
-        render json: VendorSerializer.new(vendor), status: :accepted
-      else
-        bad_request_response(vendor.errors.full_messages)
-      end
+    vendor = Vendor.find(params[:id])
+    if vendor.update(vendor_params)
+      render json: VendorSerializer.new(vendor), status: :accepted
     else
-      not_found_response(vendor.errors.full_messages)
+      bad_request_response(vendor.errors.full_messages)
     end
   end
 
@@ -38,16 +35,6 @@ class Api::V0::VendorsController < ApplicationController
     else
       bad_request_response(vendor.errors.full_messages)
     end
-  end
-
-  def bad_request_response(exception)
-    render json: ErrorSerializer.new(ErrorMessage.new(exception, 400))
-    .serialize_json, status: :bad_request
-  end
-
-  def not_found_response(exception)
-    render json: ErrorSerializer.new(ErrorMessage.new(exception.message))
-    .serialize_json, status: :not_found
   end
 
   private
