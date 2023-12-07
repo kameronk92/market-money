@@ -48,6 +48,7 @@ RSpec.describe "market vendors requests" do
         expect(attributes).to have_key(:credit_accepted)
         expect(attributes[:credit_accepted]).to be_in([true, false])
       end
+      Vendor.destroy_all
     end
 
     it 'sad path' do

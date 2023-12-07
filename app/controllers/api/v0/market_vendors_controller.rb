@@ -14,16 +14,41 @@ class Api::V0::MarketVendorsController < ApplicationController
     render json: { message: "Successfully added vendor to market" }, status: :created
   end
 
+  def destroy
+    market_vendor = MarketVendor.find_by!(market_vendor_params)
+    raise ActiveRecord::RecordNotFound if market_vendor.nil?
+    MarketVendor.delete(market_vendor)
+    render status: 204
+  end
+
   private
 
   def not_found_response(exception)
-    render json: {
+    if params[:action] == "create"
+      render json: {
+          errors: [
+            {
+              detail: "Validation failed: Market must exist"
+            }
+          ]
+        }, status: :not_found
+    elsif params[:action] == "destroy"
+      render json: {
         errors: [
           {
-            detail: "Validation failed: Market must exist"
+            detail: "No MarketVendor with market_id=#{params[:market_vendor][:market_id]} AND vendor_id=#{params[:market_vendor][:vendor_id]} exists"
           }
         ]
       }, status: :not_found
+    else
+      render json: {
+        errors: [
+          {
+            detail: "Unknown Object Not Found Error"
+          }
+        ]
+      }, status: :not_found
+    end
   end
 
   def bad_request_response(exception)
@@ -37,6 +62,6 @@ class Api::V0::MarketVendorsController < ApplicationController
   end
 
   def market_vendor_params
-    params.permit(:vendor_id, :market_id)
+    params.permit(:id, :vendor_id, :market_id)
   end
 end

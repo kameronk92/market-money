@@ -2,7 +2,8 @@ require "rails_helper"
 
 RSpec.describe "Vendor Post Requests" do
   it "adds a vendor to the vendors list, happy" do
-    expect(Vendor.count).to be_zero
+    Vendor.destroy_all
+    expect(Vendor.count).to eq(0)
 
     new_vendor_params = {
       id: 1,
@@ -51,7 +52,8 @@ RSpec.describe "Vendor Post Requests" do
   end
 
   it "adds a vendor to the vendors list, sad" do
-    expect(Vendor.count).to be_zero
+    Vendor.destroy_all
+    expect(Vendor.count).to eq(0)
 
     new_vendor_params = {
       id: 1,
