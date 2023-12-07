@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-  def bad_request_response(exception)
+  def bad_request_response(exception, market_vendor = false)
     render json: ErrorSerializer.new(ErrorMessage.new(exception, 400))
     .serialize_json, status: :bad_request
   end

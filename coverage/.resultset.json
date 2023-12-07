@@ -18,6 +18,16 @@
           null
         ]
       },
+      "/Users/kameron/turing_work/3mod/projects/market_money/app/models/market_vendor.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
       "/Users/kameron/turing_work/3mod/projects/market_money/app/models/vendor.rb": {
         "lines": [
           1,
@@ -29,23 +39,39 @@
           null
         ]
       },
-      "/Users/kameron/turing_work/3mod/projects/market_money/app/controllers/api/v0/market_vendors_controller.rb": {
+      "/Users/kameron/turing_work/3mod/projects/market_money/app/poros/error_message.rb": {
         "lines": [
           1,
           1,
+          null,
+          1,
+          12,
+          12,
+          null,
+          null,
+          1,
+          11,
+          3,
+          8,
+          7,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/kameron/turing_work/3mod/projects/market_money/app/controllers/api/v0/markets_controller.rb": {
+        "lines": [
+          1,
           1,
           null,
           1,
           1,
           null,
-          0,
-          null,
-          null,
           null,
           1,
-          null,
-          1,
-          1,
+          2,
           null,
           null
         ]
@@ -54,28 +80,147 @@
         "lines": [
           1,
           1,
-          0,
+          2,
           null,
           null,
           null,
           1,
-          0,
+          6,
           null,
           null,
           null
         ]
       },
-      "/Users/kameron/turing_work/3mod/projects/market_money/app/models/market_vendor.rb": {
+      "/Users/kameron/turing_work/3mod/projects/market_money/app/serializers/market_serializer.rb": {
         "lines": [
           1,
           1,
           1,
           null,
           1,
+          1,
+          null,
+          1,
+          9,
+          null,
+          null
+        ]
+      },
+      "/Users/kameron/turing_work/3mod/projects/market_money/app/serializers/market_vendor_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/kameron/turing_work/3mod/projects/market_money/app/serializers/vendor_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/kameron/turing_work/3mod/projects/market_money/app/serializers/error_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          9,
+          null,
+          null,
+          1,
+          null,
+          8,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/kameron/turing_work/3mod/projects/market_money/app/controllers/api/v0/market_vendors_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          2,
+          1,
+          null,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/kameron/turing_work/3mod/projects/market_money/app/controllers/api/v0/vendors_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          3,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          4,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1701961586
+    "timestamp": 1701964471
   }
 }

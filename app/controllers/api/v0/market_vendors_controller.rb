@@ -1,8 +1,11 @@
 class Api::V0::MarketVendorsController < ApplicationController
-  def create
-    market_vendor = MarketVendor.new(market_vendor_params)
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found_response
 
-    if market_vendor.save
+  def create
+    market = Market.find(params[:market_id])
+    vendor = Vendor.find(params[:vendor_id])
+
+    if market.vendors << vendor
       render json: { message: "Successfully added vendor to market" }, status: :created
     else
       bad_request_response(market_vendor.errors.full_messages)
