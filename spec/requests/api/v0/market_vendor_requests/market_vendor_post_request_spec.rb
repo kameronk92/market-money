@@ -13,6 +13,7 @@ RSpec.describe "Market Vendor Post Requests" do
     expect(MarketVendor.count).to eq(1)
     
     market_vendor = JSON.parse(response.body, symbolize_names: true)
+pry
 
     expect(market_vendor).to have_key(:data)
     expect(market_vendor[:message]).to eq("Successfully added vendor to market")
