@@ -10,7 +10,7 @@
           1,
           null,
           1,
-          0,
+          1,
           null,
           null
         ]
@@ -49,15 +49,15 @@
           1,
           null,
           1,
-          13,
-          13,
+          11,
+          11,
           null,
           null,
           1,
-          12,
+          10,
           3,
-          9,
-          8,
+          7,
+          6,
           null,
           1,
           null,
@@ -76,7 +76,7 @@
           null,
           null,
           1,
-          4,
+          2,
           null,
           null
         ]
@@ -90,7 +90,7 @@
           null,
           null,
           1,
-          7,
+          5,
           null,
           null,
           null
@@ -106,7 +106,7 @@
           1,
           null,
           1,
-          9,
+          10,
           null,
           null
         ]
@@ -133,16 +133,35 @@
           null
         ]
       },
+      "/Users/kameron/turing_work/3mod/projects/market_money/app/controllers/api/v0/search_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/kameron/turing_work/3mod/projects/market_money/app/serializers/error_serializer.rb": {
         "lines": [
           1,
           1,
-          10,
+          8,
           null,
           null,
           1,
           null,
-          9,
+          7,
           null,
           null,
           null,
@@ -265,6 +284,6 @@
         ]
       }
     },
-    "timestamp": 1702005523
+    "timestamp": 1702006932
   }
 }

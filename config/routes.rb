@@ -7,13 +7,13 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v0 do
+      get '/markets/search', to: 'search#search'
       resources :market_vendors, only: [:create]
       delete '/market_vendors', to: 'market_vendors#destroy'
       resources :vendors, only: [:show, :create, :update, :destroy]
       resources :markets, only: [:index, :show, :search] do
         resources :vendors, only: [:index] #show all vendors for a market
       end
-      get '/markets/search', to: 'search#search'
     end
   end
 
