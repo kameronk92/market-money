@@ -10,9 +10,11 @@ Rails.application.routes.draw do
       resources :market_vendors, only: [:create]
       delete '/market_vendors', to: 'market_vendors#destroy'
       resources :vendors, only: [:show, :create, :update, :destroy]
-      resources :markets, only: [:index, :show] do
+      resources :markets, only: [:index, :show, :search] do
         resources :vendors, only: [:index] #show all vendors for a market
       end
+      get '/markets/search', to: 'search#search'
     end
   end
+
 end
