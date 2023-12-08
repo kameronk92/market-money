@@ -32,19 +32,11 @@ class Api::V0::MarketVendorsController < ApplicationController
             }
           ]
         }, status: :not_found
-    elsif params[:action] == "destroy"
+    else params[:action] == "destroy"
       render json: {
         errors: [
           {
             detail: "No MarketVendor with market_id=#{params[:market_vendor][:market_id]} AND vendor_id=#{params[:market_vendor][:vendor_id]} exists"
-          }
-        ]
-      }, status: :not_found
-    else
-      render json: {
-        errors: [
-          {
-            detail: "Unknown Object Not Found Error"
           }
         ]
       }, status: :not_found

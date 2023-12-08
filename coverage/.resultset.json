@@ -8,6 +8,27 @@
           1,
           null,
           1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          20,
+          null,
+          null,
           null
         ]
       },
@@ -65,6 +86,7 @@
         "lines": [
           1,
           1,
+          1,
           null,
           1,
           1,
@@ -72,6 +94,11 @@
           null,
           1,
           2,
+          null,
+          null,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -101,7 +128,7 @@
           1,
           null,
           1,
-          9,
+          10,
           null,
           null
         ]
@@ -125,6 +152,25 @@
           null,
           1,
           1,
+          null
+        ]
+      },
+      "/Users/kameron/turing_work/3mod/projects/market_money/app/controllers/api/v0/search_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -185,14 +231,6 @@
           null,
           1,
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0,
           null,
           null,
           null,
@@ -266,8 +304,32 @@
           null,
           null
         ]
+      },
+      "/Users/kameron/turing_work/3mod/projects/market_money/app/serializers/atm_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/kameron/turing_work/3mod/projects/market_money/app/poros/atm.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1701988016
+    "timestamp": 1702049200
   }
 }
