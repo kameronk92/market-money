@@ -12,6 +12,23 @@
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          20,
+          null,
+          null,
           null
         ]
       },
@@ -77,6 +94,11 @@
           null,
           1,
           2,
+          null,
+          null,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -282,8 +304,32 @@
           null,
           null
         ]
+      },
+      "/Users/kameron/turing_work/3mod/projects/market_money/app/serializers/atm_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/kameron/turing_work/3mod/projects/market_money/app/poros/atm.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1702006932
+    "timestamp": 1702049200
   }
 }
